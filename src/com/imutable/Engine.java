@@ -1,17 +1,15 @@
 package com.imutable;
 
 public class Engine {
-    private int horsPower;
+    private double horsPower;
     private double weight;
     private double mileage;
 
-    public Engine(int horsPower, double weight, double mileage) {
-        this.horsPower = horsPower;
-        this.weight = weight;
-        this.mileage = mileage;
+    public Engine() {
+
     }
 
-    public int getHorsPower() {
+    public double getHorsPower() {
         return horsPower;
     }
 
@@ -23,7 +21,7 @@ public class Engine {
         return mileage;
     }
 
-    public void setHorsPower(int horsPower) {
+    public void setHorsPower(double horsPower) {
         this.horsPower = horsPower;
     }
 
@@ -34,4 +32,16 @@ public class Engine {
     public void setMileage(double mileage) {
         this.mileage = mileage;
     }
+
+    public Engine copyEngine() {
+        Engine engine = new Engine();
+        engine.setHorsPower(this.getHorsPower());
+        engine.setWeight(this.getWeight());
+        engine.setMileage(this.getMileage());
+        return engine;
+    }
 }
+
+
+
+
